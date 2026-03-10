@@ -2,56 +2,101 @@
 <html lang="vi">
 
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Lemon Laundry Review</title>
 
 <style>
 
 body{
+
+margin:0;
 font-family: Arial, sans-serif;
-text-align:center;
 
 background-image:url("lemon.jpg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 
-margin:0;
-padding-top:80px;
+display:flex;
+justify-content:center;
+align-items:center;
+
+height:100vh;
+
 }
+
+/* khung trắng giữa màn hình */
+
+.container{
+
+background:rgba(255,255,255,0.9);
+padding:35px 25px;
+border-radius:18px;
+
+text-align:center;
+
+width:85%;
+max-width:400px;
+
+}
+
+/* logo */
 
 .logo{
-font-size:34px;
+
+font-size:32px;
 font-weight:bold;
 color:#f4b400;
-margin-bottom:10px;
+margin-bottom:8px;
+
 }
+
+/* địa chỉ */
 
 .address{
-color:#666;
-margin-bottom:40px;
+
+color:#777;
+margin-bottom:25px;
+
 }
+
+/* tiêu đề */
 
 .title{
-font-size:26px;
-margin-bottom:30px;
+
+font-size:22px;
+margin-bottom:25px;
+
 }
 
+/* sao */
+
 .stars span{
-font-size:60px;
+
+font-size:55px;
 cursor:pointer;
-margin:10px;
+margin:6px;
 transition:0.2s;
+
 }
 
 .stars span:hover{
+
 transform:scale(1.2);
+
 }
 
+/* ghi chú */
+
 .note{
-margin-top:40px;
+
+margin-top:25px;
 color:#777;
-font-size:14px;
+font-size:13px;
+
 }
 
 </style>
@@ -59,6 +104,8 @@ font-size:14px;
 </head>
 
 <body>
+
+<div class="container">
 
 <div class="logo">
 🍋 Lemon Laundry
@@ -86,6 +133,8 @@ Bạn hài lòng với dịch vụ của chúng tôi?
 Cảm ơn bạn đã giúp Lemon Laundry cải thiện dịch vụ ❤️
 </div>
 
+</div>
+
 <script>
 
 function rate(stars){
@@ -109,8 +158,3 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 </body>
 
 </html>
-
-
-
-
-
