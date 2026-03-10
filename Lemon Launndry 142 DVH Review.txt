@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+<meta charset="UTF-8">
+<title>Lemon Laundry Review</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+text-align:center;
+background:#fff9e6;
+margin:0;
+padding-top:80px;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:#f4b400;
+margin-bottom:10px;
+}
+
+.address{
+color:#666;
+margin-bottom:40px;
+}
+
+.title{
+font-size:26px;
+margin-bottom:30px;
+}
+
+.stars span{
+font-size:60px;
+cursor:pointer;
+margin:10px;
+transition:0.2s;
+}
+
+.stars span:hover{
+transform:scale(1.2);
+}
+
+.note{
+margin-top:40px;
+color:#777;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="logo">
+🍋 Lemon Laundry
+</div>
+
+<div class="address">
+142 Đặng Vũ Hỷ
+</div>
+
+<div class="title">
+Bạn hài lòng với dịch vụ của chúng tôi?
+</div>
+
+<div class="stars">
+
+<span onclick="rate(1)">⭐</span>
+<span onclick="rate(2)">⭐</span>
+<span onclick="rate(3)">⭐</span>
+<span onclick="rate(4)">⭐</span>
+<span onclick="rate(5)">⭐</span>
+
+</div>
+
+<div class="note">
+Cảm ơn bạn đã giúp Lemon Laundry cải thiện dịch vụ ❤️
+</div>
+
+<script>
+
+function rate(stars){
+
+if(stars <=3){
+
+window.location="https://docs.google.com/forms/d/e/1FAIpQLSfQucXNqQpD7xyTg_6Q4zE8XOKr0HuMWQzPeawKJUI_WBIIbg/viewform";
+
+}
+
+else{
+
+window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
