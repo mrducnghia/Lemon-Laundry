@@ -4,49 +4,37 @@
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#00BFFF">
 
 <title>Lemon Laundry Review</title>
 
 <style>
 
 body{
-
 font-family: Arial, sans-serif;
 text-align:center;
 
 background-image:url("nen.png");
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 
 margin:0;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-min-height:100vh;
-
+padding-top:60px;
 }
-
-/* khung chính */
 
 .container{
 
-background:rgba(255,255,255,0.85);
-backdrop-filter:blur(10px);
+background:#eaf6fb;
+margin:20px;
+padding:30px 20px;
 
-padding:30px 25px;
-border-radius:20px;
-
-width:90%;
-max-width:380px;
-
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+border-radius:25px;
 
 }
-
-/* logo */
 
 .logo img{
 
@@ -56,66 +44,44 @@ margin-bottom:10px;
 
 }
 
-/* địa chỉ */
-
 .address{
 
-color:#555;
-margin-bottom:25px;
-font-size:14px;
+color:#666;
+margin-bottom:20px;
+font-size:16px;
 
 }
-
-/* tiêu đề */
 
 .title{
 
-font-size:22px;
+font-size:24px;
 margin-bottom:25px;
-font-weight:600;
 
 }
 
-/* sao */
+.stars span{
 
-.stars{
-
-font-size:42px;
-letter-spacing:8px;
-
-}
-
-/* sao mặc định */
-
-.star{
-
-color:#ddd;
+font-size:77px;
 cursor:pointer;
+margin:8px;
+
+color:#cccccc;
+
 transition:0.2s;
 
 }
 
-/* sao khi hover */
-
-.star:hover{
+.stars span:hover{
 
 transform:scale(1.2);
 
 }
 
-/* sao được chọn */
-
-.star.active{
-
-color:#00BFFF;
-
-}
-
 .note{
 
-margin-top:25px;
-font-size:13px;
-color:#666;
+margin-top:30px;
+color:#777;
+font-size:14px;
 
 }
 
@@ -128,7 +94,9 @@ color:#666;
 <div class="container">
 
 <div class="logo">
-<img src="logo.jpg" alt="Lemon Laundry">
+
+<img src="logo.png" alt="Lemon Laundry">
+
 </div>
 
 <div class="address">
@@ -141,11 +109,11 @@ Bạn hài lòng với dịch vụ của chúng tôi?
 
 <div class="stars">
 
-<span class="star" onclick="rate(1)">★</span>
-<span class="star" onclick="rate(2)">★</span>
-<span class="star" onclick="rate(3)">★</span>
-<span class="star" onclick="rate(4)">★</span>
-<span class="star" onclick="rate(5)">★</span>
+<span onclick="rate(1)">★</span>
+<span onclick="rate(2)">★</span>
+<span onclick="rate(3)">★</span>
+<span onclick="rate(4)">★</span>
+<span onclick="rate(5)">★</span>
 
 </div>
 
@@ -159,35 +127,17 @@ Cảm ơn bạn đã giúp Lemon Laundry cải thiện dịch vụ ❤️
 
 function rate(stars){
 
-let allStars = document.querySelectorAll(".star");
-
-allStars.forEach((star,index)=>{
-
-if(index < stars){
-
-star.classList.add("active");
-
-}else{
-
-star.classList.remove("active");
-
-}
-
-});
-
-setTimeout(()=>{
-
 if(stars <=3){
 
 window.location="https://docs.google.com/forms/d/e/1FAIpQLSfQucXNqQpD7xyTg_6Q4zE8XOKr0HuMWQzPeawKJUI_WBIIbg/viewform";
 
-}else{
+}
+
+else{
 
 window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 
 }
-
-},500);
 
 }
 
@@ -196,5 +146,3 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 </body>
 
 </html>
-
-
