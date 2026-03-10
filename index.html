@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 
 <head>
@@ -10,92 +11,104 @@
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
 
+font-family:Arial, sans-serif;
 margin:0;
-font-family: Arial, sans-serif;
+height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 background-image:url("lemon.jpg");
 background-size:cover;
 background-position:center;
-background-repeat:no-repeat;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-height:100vh;
 
 }
 
-/* khung trắng giữa màn hình */
+.overlay{
 
-.container{
+background:rgba(255,255,255,0.88);
+padding:40px 25px;
+border-radius:20px;
 
-background:rgba(255,255,255,0.9);
-padding:35px 25px;
-border-radius:18px;
+width:90%;
+max-width:420px;
 
 text-align:center;
 
-width:85%;
-max-width:400px;
+box-shadow:0 10px 35px rgba(0,0,0,0.2);
 
 }
-
-/* logo */
 
 .logo{
 
 font-size:32px;
 font-weight:bold;
-color:#f4b400;
-margin-bottom:8px;
+color:#2ea3c6;
+margin-bottom:10px;
 
 }
 
-/* địa chỉ */
-
 .address{
 
+font-size:14px;
 color:#777;
 margin-bottom:25px;
 
 }
-
-/* tiêu đề */
 
 .title{
 
 font-size:22px;
 margin-bottom:25px;
+font-weight:bold;
 
 }
 
-/* sao */
+.stars{
+
+margin-bottom:20px;
+
+}
 
 .stars span{
 
-font-size:55px;
+font-size:48px;
+margin:5px;
 cursor:pointer;
-margin:6px;
-transition:0.2s;
+
+color:#2ea3c6;
+
+transition:0.25s;
 
 }
 
 .stars span:hover{
 
-transform:scale(1.2);
+transform:scale(1.25);
 
 }
 
-/* ghi chú */
-
 .note{
 
-margin-top:25px;
+font-size:14px;
 color:#777;
-font-size:13px;
+
+}
+
+@media (max-width:480px){
+
+.stars span{
+
+font-size:42px;
+
+}
 
 }
 
@@ -105,7 +118,7 @@ font-size:13px;
 
 <body>
 
-<div class="container">
+<div class="overlay">
 
 <div class="logo">
 🍋 Lemon Laundry
@@ -121,11 +134,7 @@ Are you satisfied with our service?
 
 <div class="stars">
 
-<span onclick="rate(1)">⭐</span>
-<span onclick="rate(2)">⭐</span>
-<span onclick="rate(3)">⭐</span>
-<span onclick="rate(4)">⭐</span>
-<span onclick="rate(5)">⭐</span>
+<span onclick="rate(1)">★</span> <span onclick="rate(2)">★</span> <span onclick="rate(3)">★</span> <span onclick="rate(4)">★</span> <span onclick="rate(5)">★</span>
 
 </div>
 
@@ -158,4 +167,3 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 </body>
 
 </html>
-
