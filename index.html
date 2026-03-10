@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="vi">
 
 <head>
@@ -11,104 +10,112 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-}
-
 body{
 
-font-family:Arial, sans-serif;
+font-family: Arial, sans-serif;
+text-align:center;
+
+background-image:url("nen.png");
+background-size:cover;
+background-position:center;
+
 margin:0;
-height:100vh;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-background-image:url("lemon.jpg");
-background-size:cover;
-background-position:center;
+min-height:100vh;
 
 }
 
-.overlay{
+/* khung chính */
 
-background:rgba(255,255,255,0.88);
-padding:40px 25px;
+.container{
+
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+
+padding:30px 25px;
 border-radius:20px;
 
 width:90%;
-max-width:420px;
+max-width:380px;
 
-text-align:center;
-
-box-shadow:0 10px 35px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 }
 
-.logo{
+/* logo */
 
-font-size:32px;
-font-weight:bold;
-color:#2ea3c6;
+.logo img{
+
+width:160px;
+max-width:80%;
 margin-bottom:10px;
 
 }
 
+/* địa chỉ */
+
 .address{
 
-font-size:14px;
-color:#777;
+color:#555;
 margin-bottom:25px;
+font-size:14px;
 
 }
+
+/* tiêu đề */
 
 .title{
 
 font-size:22px;
 margin-bottom:25px;
-font-weight:bold;
+font-weight:600;
 
 }
+
+/* sao */
 
 .stars{
 
-margin-bottom:20px;
+font-size:42px;
+letter-spacing:8px;
 
 }
 
-.stars span{
+/* sao mặc định */
 
-font-size:48px;
-margin:5px;
+.star{
+
+color:#ddd;
 cursor:pointer;
-
-color:#2ea3c6;
-
-transition:0.25s;
+transition:0.2s;
 
 }
 
-.stars span:hover{
+/* sao khi hover */
 
-transform:scale(1.25);
+.star:hover{
+
+transform:scale(1.2);
+
+}
+
+/* sao được chọn */
+
+.star.active{
+
+color:#00BFFF;
 
 }
 
 .note{
 
-font-size:14px;
-color:#777;
-
-}
-
-@media (max-width:480px){
-
-.stars span{
-
-font-size:42px;
-
-}
+margin-top:25px;
+font-size:13px;
+color:#666;
 
 }
 
@@ -118,28 +125,32 @@ font-size:42px;
 
 <body>
 
-<div class="overlay">
+<div class="container">
 
 <div class="logo">
-🍋 Lemon Laundry
+<img src="logo.jpg" alt="Lemon Laundry">
 </div>
 
 <div class="address">
-142 Dang Vu Hy
+142 Đặng Vũ Hỷ
 </div>
 
 <div class="title">
-Are you satisfied with our service?
+Bạn hài lòng với dịch vụ của chúng tôi?
 </div>
 
 <div class="stars">
 
-<span onclick="rate(1)">★</span> <span onclick="rate(2)">★</span> <span onclick="rate(3)">★</span> <span onclick="rate(4)">★</span> <span onclick="rate(5)">★</span>
+<span class="star" onclick="rate(1)">★</span>
+<span class="star" onclick="rate(2)">★</span>
+<span class="star" onclick="rate(3)">★</span>
+<span class="star" onclick="rate(4)">★</span>
+<span class="star" onclick="rate(5)">★</span>
 
 </div>
 
 <div class="note">
-Thank you for helping Lemon Laundry improve our service! ❤️
+Cảm ơn bạn đã giúp Lemon Laundry cải thiện dịch vụ ❤️
 </div>
 
 </div>
@@ -148,17 +159,35 @@ Thank you for helping Lemon Laundry improve our service! ❤️
 
 function rate(stars){
 
+let allStars = document.querySelectorAll(".star");
+
+allStars.forEach((star,index)=>{
+
+if(index < stars){
+
+star.classList.add("active");
+
+}else{
+
+star.classList.remove("active");
+
+}
+
+});
+
+setTimeout(()=>{
+
 if(stars <=3){
 
 window.location="https://docs.google.com/forms/d/e/1FAIpQLSfQucXNqQpD7xyTg_6Q4zE8XOKr0HuMWQzPeawKJUI_WBIIbg/viewform";
 
-}
-
-else{
+}else{
 
 window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 
 }
+
+},500);
 
 }
 
