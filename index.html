@@ -31,20 +31,20 @@ min-height:100vh;
 
 }
 
-/* khung chính */
+/* khung nội dung */
 
 .container{
 
 background:rgba(255,255,255,0.85);
 backdrop-filter:blur(10px);
 
-padding:30px 25px;
-border-radius:20px;
+padding:35px 30px;
+border-radius:22px;
 
-width:90%;
-max-width:380px;
+width:92%;
+max-width:440px;
 
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+box-shadow:0 15px 40px rgba(0,0,0,0.18);
 
 }
 
@@ -52,9 +52,9 @@ box-shadow:0 10px 30px rgba(0,0,0,0.15);
 
 .logo img{
 
-width:160px;
-max-width:80%;
-margin-bottom:10px;
+width:168px;
+max-width:85%;
+margin-bottom:15px;
 
 }
 
@@ -184,15 +184,11 @@ const stars = document.querySelectorAll(".star");
 
 stars.forEach((star,index)=>{
 
-/* hover highlight */
-
 star.addEventListener("mouseenter",()=>{
 
 highlightStars(index+1);
 
 });
-
-/* click rating */
 
 star.addEventListener("click",()=>{
 
@@ -224,7 +220,7 @@ function rate(starsCount){
 
 highlightStars(starsCount);
 
-/* rung nhẹ khi 5 sao */
+/* rung khi 5 sao */
 
 if(starsCount === 5){
 
