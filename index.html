@@ -5,6 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#00BFFF">
 
 <title>Lemon Laundry Review</title>
 
@@ -18,6 +19,7 @@ text-align:center;
 background-image:url("nen.png");
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 
 margin:0;
 
@@ -76,16 +78,19 @@ font-weight:600;
 
 }
 
-/* sao */
+/* khu vực sao */
 
 .stars{
 
+display:flex;
+justify-content:center;
+gap:10px;
+
 font-size:42px;
-letter-spacing:8px;
 
 }
 
-/* sao mặc định */
+/* sao */
 
 .star{
 
@@ -95,7 +100,7 @@ transition:0.2s;
 
 }
 
-/* sao khi hover */
+/* hover */
 
 .star:hover{
 
@@ -103,11 +108,29 @@ transform:scale(1.2);
 
 }
 
-/* sao được chọn */
+/* sao active */
 
 .star.active{
 
 color:#00BFFF;
+
+}
+
+/* hiệu ứng rung */
+
+@keyframes shake{
+
+0%{transform:translateX(0);}
+25%{transform:translateX(-3px);}
+50%{transform:translateX(3px);}
+75%{transform:translateX(-3px);}
+100%{transform:translateX(0);}
+
+}
+
+.shake{
+
+animation:shake 0.3s;
 
 }
 
@@ -141,11 +164,11 @@ Are you satisfied with our service?
 
 <div class="stars">
 
-<span class="star" onclick="rate(1)">★</span>
-<span class="star" onclick="rate(2)">★</span>
-<span class="star" onclick="rate(3)">★</span>
-<span class="star" onclick="rate(4)">★</span>
-<span class="star" onclick="rate(5)">★</span>
+<span class="star" data-value="1">★</span>
+<span class="star" data-value="2">★</span>
+<span class="star" data-value="3">★</span>
+<span class="star" data-value="4">★</span>
+<span class="star" data-value="5">★</span>
 
 </div>
 
@@ -157,27 +180,67 @@ Thank you for helping Lemon Laundry improve our service ❤️
 
 <script>
 
-function rate(stars){
+const stars = document.querySelectorAll(".star");
 
-let allStars = document.querySelectorAll(".star");
+stars.forEach((star,index)=>{
 
-allStars.forEach((star,index)=>{
+/* hover highlight */
 
-if(index < stars){
+star.addEventListener("mouseenter",()=>{
 
-star.classList.add("active");
+highlightStars(index+1);
+
+});
+
+/* click rating */
+
+star.addEventListener("click",()=>{
+
+rate(index+1);
+
+});
+
+});
+
+function highlightStars(rating){
+
+stars.forEach((s,i)=>{
+
+if(i < rating){
+
+s.classList.add("active");
 
 }else{
 
-star.classList.remove("active");
+s.classList.remove("active");
 
 }
 
 });
 
+}
+
+function rate(starsCount){
+
+highlightStars(starsCount);
+
+/* rung nhẹ khi 5 sao */
+
+if(starsCount === 5){
+
+document.querySelector(".stars").classList.add("shake");
+
+if(navigator.vibrate){
+
+navigator.vibrate(80);
+
+}
+
+}
+
 setTimeout(()=>{
 
-if(stars <=3){
+if(starsCount <=3){
 
 window.location="https://docs.google.com/forms/d/e/1FAIpQLSfQucXNqQpD7xyTg_6Q4zE8XOKr0HuMWQzPeawKJUI_WBIIbg/viewform";
 
@@ -187,7 +250,7 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 
 }
 
-},500);
+},600);
 
 }
 
@@ -196,5 +259,3 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 </body>
 
 </html>
-
-
