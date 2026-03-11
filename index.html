@@ -73,64 +73,62 @@ font-size:14px;
 .title{
 
 font-size:22px;
-margin-bottom:25px;
+margin-bottom:30px;
 font-weight:600;
 
 }
 
-/* khu vực sao */
+/* khu vực nút */
 
-.stars{
+.buttons{
 
 display:flex;
-justify-content:center;
-gap:10px;
-
-font-size:42px;
+flex-direction:column;
+gap:15px;
 
 }
 
-/* sao */
+/* nút */
 
-.star{
+.btn{
 
-color:#ddd;
+padding:16px;
+border-radius:12px;
+font-size:18px;
+font-weight:600;
 cursor:pointer;
+border:none;
 transition:0.2s;
 
 }
 
-/* hover */
+/* nút hài lòng */
 
-.star:hover{
+.btn-happy{
 
-transform:scale(1.2);
-
-}
-
-/* sao active */
-
-.star.active{
-
-color:#00BFFF;
+background:#00BFFF;
+color:white;
 
 }
 
-/* hiệu ứng rung */
+.btn-happy:hover{
 
-@keyframes shake{
-
-0%{transform:translateX(0);}
-25%{transform:translateX(-3px);}
-50%{transform:translateX(3px);}
-75%{transform:translateX(-3px);}
-100%{transform:translateX(0);}
+transform:scale(1.05);
 
 }
 
-.shake{
+/* nút không hài lòng */
 
-animation:shake 0.3s;
+.btn-unhappy{
+
+background:#f2f2f2;
+color:#333;
+
+}
+
+.btn-unhappy:hover{
+
+background:#e6e6e6;
 
 }
 
@@ -162,13 +160,15 @@ Lemon Laundry _ 142 Dang Vu Hy
 Are you satisfied with our service?
 </div>
 
-<div class="stars">
+<div class="buttons">
 
-<span class="star" data-value="1">★</span>
-<span class="star" data-value="2">★</span>
-<span class="star" data-value="3">★</span>
-<span class="star" data-value="4">★</span>
-<span class="star" data-value="5">★</span>
+<button class="btn btn-happy" onclick="happy()">
+😊 Very satisfied
+</button>
+
+<button class="btn btn-unhappy" onclick="unhappy()">
+😐 Not satisfied
+</button>
 
 </div>
 
@@ -180,73 +180,15 @@ Thank you for helping Lemon Laundry improve our service ❤️
 
 <script>
 
-const stars = document.querySelectorAll(".star");
-
-stars.forEach((star,index)=>{
-
-star.addEventListener("mouseenter",()=>{
-
-highlightStars(index+1);
-
-});
-
-star.addEventListener("click",()=>{
-
-rate(index+1);
-
-});
-
-});
-
-function highlightStars(rating){
-
-stars.forEach((s,i)=>{
-
-if(i < rating){
-
-s.classList.add("active");
-
-}else{
-
-s.classList.remove("active");
-
-}
-
-});
-
-}
-
-function rate(starsCount){
-
-highlightStars(starsCount);
-
-/* rung khi 5 sao */
-
-if(starsCount === 5){
-
-document.querySelector(".stars").classList.add("shake");
-
-if(navigator.vibrate){
-
-navigator.vibrate(80);
-
-}
-
-}
-
-setTimeout(()=>{
-
-if(starsCount <=3){
-
-window.location="https://docs.google.com/forms/d/e/1FAIpQLSdLFk4iY2hqkX3CKqZvdKmWuE9QdEFg1nhYfEhybII4ni6ccA/viewform?usp=dialog";
-
-}else{
+function happy(){
 
 window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 
 }
 
-},600);
+function unhappy(){
+
+window.location="https://docs.google.com/forms/d/e/1FAIpQLSdLFk4iY2hqkX3CKqZvdKmWuE9QdEFg1nhYfEhybII4ni6ccA/viewform?usp=dialog";
 
 }
 
@@ -255,4 +197,3 @@ window.location="https://g.page/r/CYkoFLwBqYWQEBM/review";
 </body>
 
 </html>
-
